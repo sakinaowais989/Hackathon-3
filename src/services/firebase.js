@@ -4,12 +4,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBS4ocGa97uVQGPLZjK6oG9-iQuvg_SKdE",
-  authDomain: "saylani-portal-c4eab.firebaseapp.com",
-  projectId: "saylani-portal-c4eab",
-  storageBucket: "saylani-portal-c4eab.appspot.com",
-  messagingSenderId: "774535300852",
-  appId: "1:774535300852:web:8aab94ffd811c62ef380a1"
+  apiKey: "AIzaSyCeaGfeGxYj3YeLQw9TM6JoLhmBLL-5lZw",
+  authDomain: "hackathon-15-2-2026.firebaseapp.com",
+  projectId: "hackathon-15-2-2026",
+  storageBucket: "hackathon-15-2-2026.firebasestorage.app",
+  messagingSenderId: "1067871449633",
+  appId: "1:1067871449633:web:3dff9c88ebc296ecdb2960",
+  measurementId: "G-2D1F44XZTX"
 };
 
 const app = initializeApp(firebaseConfig);
