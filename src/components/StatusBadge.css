@@ -1,0 +1,192 @@
+/* Status Badge Component Styling */
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+/* Status Types */
+.badge-pending {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fbbf24;
+}
+
+.badge-approved {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.badge-resolved {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.badge-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+.badge-in-progress {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #3b82f6;
+}
+
+.badge-active {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.badge-expired {
+  background: #e2e8f0;
+  color: #4a5568;
+  border: 1px solid #94a3b8;
+}
+
+.badge-low {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.badge-medium {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #f59e0b;
+}
+
+.badge-high {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+.badge-urgent {
+  background: #fae8ff;
+  color: #6b21a8;
+  border: 1px solid #a855f7;
+}
+
+.badge-default {
+  background: #e2e8f0;
+  color: #4a5568;
+  border: 1px solid #94a3b8;
+}
+
+/* Size Variants */
+.badge-sm {
+  padding: 2px 8px;
+  font-size: 0.75rem;
+}
+
+.badge-md {
+  padding: 4px 12px;
+  font-size: 0.85rem;
+}
+
+.badge-lg {
+  padding: 6px 16px;
+  font-size: 1rem;
+}
+
+/* With Icon */
+.badge-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-icon {
+  font-size: 1.1em;
+}
+
+/* Hover Effect */
+.status-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Support */
+.dark-theme .badge-pending {
+  background: #92400e;
+  color: #fef3c7;
+  border-color: #f59e0b;
+}
+
+.dark-theme .badge-approved,
+.dark-theme .badge-resolved {
+  background: #065f46;
+  color: #d1fae5;
+  border-color: #10b981;
+}
+
+.dark-theme .badge-rejected {
+  background: #991b1b;
+  color: #fee2e2;
+  border-color: #ef4444;
+}
+
+.dark-theme .badge-in-progress {
+  background: #1e40af;
+  color: #dbeafe;
+  border-color: #3b82f6;
+}
+
+.dark-theme .badge-default {
+  background: #4a5568;
+  color: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .status-badge {
+    padding: 3px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-badge {
+    padding: 2px 8px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Animation */
+@keyframes badgePulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.status-badge.pulse {
+  animation: badgePulse 1.5s ease-in-out infinite;
+}
+
+/* Print Styles */
+@media print {
+  .status-badge {
+    border: 1px solid #000;
+    background: none !important;
+    color: #000 !important;
+  }
+}

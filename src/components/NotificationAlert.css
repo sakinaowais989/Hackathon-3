@@ -1,0 +1,312 @@
+/* Notification Alert Component Styling */
+
+.notification-alerts {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Alert Base Styles */
+.alert {
+  background: white;
+  border-radius: 8px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  animation: slideIn 0.3s ease forwards;
+  pointer-events: auto;
+  border-left: 4px solid transparent;
+}
+
+.alert:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Alert Types */
+.alert-success {
+  background: #d1fae5;
+  border-left-color: #10b981;
+  color: #065f46;
+}
+
+.alert-error {
+  background: #fee2e2;
+  border-left-color: #ef4444;
+  color: #991b1b;
+}
+
+.alert-warning {
+  background: #fef3c7;
+  border-left-color: #f59e0b;
+  color: #92400e;
+}
+
+.alert-info {
+  background: #dbeafe;
+  border-left-color: #3b82f6;
+  color: #1e40af;
+}
+
+/* Alert Content */
+.alert span {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* Close Button */
+.alert button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.alert button:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.alert button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Alert Icons */
+.alert-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* Alert Progress Bar */
+.alert-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.1);
+  animation: progress 4s linear forwards;
+}
+
+.alert-success .alert-progress {
+  background: #10b981;
+}
+
+.alert-error .alert-progress {
+  background: #ef4444;
+}
+
+.alert-warning .alert-progress {
+  background: #f59e0b;
+}
+
+.alert-info .alert-progress {
+  background: #3b82f6;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Alert Closing Animation */
+.alert.closing {
+  animation: slideOut 0.3s ease forwards;
+}
+
+/* Multiple Alerts Stacking */
+.notification-alerts .alert {
+  margin-bottom: 0;
+}
+
+.notification-alerts .alert + .alert {
+  margin-top: 10px;
+}
+
+/* Position Variants */
+.notification-alerts.top-left {
+  top: 20px;
+  right: auto;
+  left: 20px;
+}
+
+.notification-alerts.bottom-right {
+  top: auto;
+  bottom: 20px;
+  right: 20px;
+}
+
+.notification-alerts.bottom-left {
+  top: auto;
+  bottom: 20px;
+  right: auto;
+  left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .notification-alerts {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    width: auto;
+  }
+
+  .alert {
+    padding: 12px 15px;
+  }
+
+  .alert span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .alert {
+    padding: 10px 12px;
+  }
+
+  .alert span {
+    font-size: 0.85rem;
+  }
+
+  .alert button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Dark Mode Support */
+.dark-theme .alert-success {
+  background: #065f46;
+  color: #d1fae5;
+}
+
+.dark-theme .alert-error {
+  background: #991b1b;
+  color: #fee2e2;
+}
+
+.dark-theme .alert-warning {
+  background: #92400e;
+  color: #fef3c7;
+}
+
+.dark-theme .alert-info {
+  background: #1e40af;
+  color: #dbeafe;
+}
+
+/* Print Styles */
+@media print {
+  .notification-alerts {
+    display: none;
+  }
+}
+
+/* Custom Scrollbar */
+.notification-alerts::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notification-alerts::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.notification-alerts::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.notification-alerts::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* RTL Support */
+.rtl .notification-alerts {
+  right: auto;
+  left: 20px;
+}
+
+.rtl .alert {
+  direction: rtl;
+}
+
+.rtl .alert-progress {
+  left: auto;
+  right: 0;
+}
+
+/* Focus Styles */
+.alert button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Accessibility */
+.alert[role="alert"] {
+  position: relative;
+}
+
+.alert .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
